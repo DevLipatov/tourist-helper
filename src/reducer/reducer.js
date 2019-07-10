@@ -24,6 +24,8 @@ const reducer = (state = initialState, action) => {
             return {...state, shortInfo: action.payload, shortInfoLoading: false};
         case 'FETCH_SHORT_INFO_FAILURE' :
             return {...state, shortInfoError: action.payload};
+        case 'SET_SHORT_INFO_LOADING' :
+            return {...state, shortInfoLoading: true};
         case 'TEMPERATURE_BADGE' :
             return {...state, temperatureBadge: action.payload};
         case 'CHANGE_SELECTED_CATEGORY' :
@@ -32,6 +34,8 @@ const reducer = (state = initialState, action) => {
             return {...state, fullInfo: action.payload, fullInfoLoading: false};
         case 'FETCH_FULL_INFO_FAILURE' :
             return {...state, fullInfoError: action.error, fullInfoLoading: true};
+        case 'SET_FULL_INFO_LOADING' :
+            return {...state, fullInfoLoading: true};
         default:
             return state;
     }

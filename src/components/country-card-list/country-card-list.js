@@ -9,12 +9,12 @@ import {shortInfoLoaded, shortInfoLoadedError} from "../../actions";
 
 import './country-card-list.css';
 
-const CountryCardList = ({data, selectedCategory}) => {
+const CountryCardList = ({data}) => {
 
     const list = data.map(
         (el) => {
             return (
-                <CountryCard data={el} key={el.id} category={selectedCategory}/>
+                <CountryCard data={el} key={el.id}/>
             )
         }
     );
@@ -26,6 +26,7 @@ const CountryCardList = ({data, selectedCategory}) => {
 
 class CountryCardListContainer extends Component {
 
+    //TODO how to update after history.push
     componentDidMount() {
         const {
             dataService,
@@ -34,10 +35,7 @@ class CountryCardListContainer extends Component {
             shortInfoLoadedError
         } = this.props;
         dataService.getByCategory(selectedCategory)
-            .then((info) => {
-                //TODO delete
-                console.log(selectedCategory + "   " + info);
-                shortInfoLoaded(info)})
+            .then((info) => {shortInfoLoaded(info)})
             .catch((err) => shortInfoLoadedError(err))
     }
 
@@ -49,8 +47,10 @@ class CountryCardListContainer extends Component {
             selectedCategory
         } = this.props;
 
-        //TODO delete
+        //TODO delete log
+        console.log(`Country card list rendered with short info: and selected category:`);
         console.log(shortInfo);
+        console.log(selectedCategory);
 
         if (shortInfoLoading) {
             return <CustomSpinner/>
@@ -61,7 +61,6 @@ class CountryCardListContainer extends Component {
         }
 
         return <CountryCardList data={shortInfo}
-                                selected={selectedCategory}
                                 className="countries"/>
     }
 }

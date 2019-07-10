@@ -40,6 +40,12 @@ const shortInfoLoadedError = (error) => {
     }
 };
 
+const setShortInfoLoading = () => {
+    return {
+        type: 'SET_SHORT_INFO_LOADING'
+    }
+};
+
 const fullInfoLoaded = (fullInfo) => {
     return {
         type: 'FETCH_FULL_INFO_SUCCESS',
@@ -54,6 +60,12 @@ const fullInfoLoadedError = (error) => {
     }
 };
 
+const setFullInfoLoading = () => {
+    return {
+        type: 'SET_FULL_INFO_LOADING'
+    }
+};
+
 export {
     changeTemperatureBadge,
     changeSelectedCategory,
@@ -62,5 +74,7 @@ export {
     shortInfoLoaded,
     fullInfoLoaded,
     shortInfoLoadedError,
-    fullInfoLoadedError
+    fullInfoLoadedError,
+    setShortInfoLoading,
+    setFullInfoLoading
 };

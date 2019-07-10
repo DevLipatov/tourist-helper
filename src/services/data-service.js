@@ -12,10 +12,12 @@ export default class DataService {
         return await res;
     }
 
-    async getAllT() {
-        const res = await this.getResource(`/hh`);
+    async getAll() {
+        const res = await this.getResource(`/`);
+        //TODO delete log
+        console.log(`getAll response =`);
         console.log(res);
-        return res.results;
+        return new Promise((resolve) => resolve(res.results));
     }
 
     async getByCategory(category) {
@@ -30,6 +32,13 @@ export default class DataService {
                         img: "http://luchshij-otdyx.ru/wp-content/uploads/2014/08/egipet5-800x400.jpg",
                         temperature: "+21 - +31",
                         category: "Hot"
+                    },
+                    {
+                        id: "4",
+                        title: "Мальдивы",
+                        img: "http://luchshij-otdyx.ru/wp-content/uploads/2014/10/maldivy-pervoe-znakomstvo-800x400.jpg",
+                        temperature: "+25 - +31",
+                        category: "Hot"
                     }
                 ];
                 break;
@@ -41,6 +50,13 @@ export default class DataService {
                         img: "https://photos.smugmug.com/Asia/Israel/Tel-Aviv-Jaffa/i-zbQZ5ts/0/37d817e5/800x400!/IMG_9367-800x400!.jpg",
                         temperature: "+6 - +37",
                         category: "Mild"
+                    },
+                    {
+                        id: "5",
+                        title: "Австрия",
+                        img: "http://luchshij-otdyx.ru/wp-content/uploads/2014/10/otdyx-v-avstrii1-800x400.jpg",
+                        temperature: "-20 - +29",
+                        category: "Mild"
                     }
                 ];
                 break;
@@ -51,6 +67,13 @@ export default class DataService {
                         title: "Монголия",
                         img: "https://hurai-hobok.ru/wp-content/uploads/2018/08/2018_07_29_18-800x400.jpeg",
                         temperature: "+25 - +35",
+                        category: "Cold"
+                    },
+                    {
+                        id: "6",
+                        title: "Эстония",
+                        img: "https://bptrip.ru/wp-content/uploads/2014/08/estonia-tartu-800x400.jpg",
+                        temperature: "-20 - +31",
                         category: "Cold"
                     }
                 ];
@@ -64,19 +87,25 @@ export default class DataService {
     async getPopular() {
         const popularInfo = [
             {
-                id: "9",
-                title: "США",
-                img: "http://www.osiyogroup.com/wp-content/uploads/2013/03/landscape-7-800x400.jpg",
+                id: "6",
+                title: "Эстония",
+                img: "https://bptrip.ru/wp-content/uploads/2014/08/estonia-tartu-800x400.jpg",
+                temperature: "-20 - +31",
+                category: "Cold"
             },
             {
-                id: "21",
-                title: "Норвегия",
-                img: "https://www.sleepzone.ie/uploads/images/PanelImages800x400/TheBurren/General/sleepzone_hostels_burren_800x400_14.jpg"
+                id: "5",
+                title: "Австрия",
+                img: "http://luchshij-otdyx.ru/wp-content/uploads/2014/10/otdyx-v-avstrii1-800x400.jpg",
+                temperature: "-20 - +29",
+                category: "Mild"
             },
             {
-                id: "16",
-                title: "Новая зеландия",
-                img: "https://princessyachtcharter.com/wp-content/uploads/2014/11/shutterstock_56456779-800x400.jpg"
+                id: "1",
+                title: "Египет",
+                img: "http://luchshij-otdyx.ru/wp-content/uploads/2014/08/egipet5-800x400.jpg",
+                temperature: "+21 - +31",
+                category: "Hot"
             }
         ];
         return new Promise((resolve) => resolve(popularInfo))
