@@ -1,3 +1,3 @@
-import CountryPage from './country-page';
+import CountryPage from './country-page-container';
 
 export default CountryPage;

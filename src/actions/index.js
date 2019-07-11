@@ -1,10 +1,3 @@
-const changeTemperatureBadge = (temperature) => {
-    return {
-        type: 'TEMPERATURE_BADGE',
-        payload: temperature
-    }
-};
-
 const popularInfoLoaded = (popularInfo) => {
     return {
         type: 'FETCH_POPULAR_INFO_SUCCESS',
@@ -40,41 +33,26 @@ const shortInfoLoadedError = (error) => {
     }
 };
 
-const setShortInfoLoading = () => {
+const countryDataLoaded = (data) => {
     return {
-        type: 'SET_SHORT_INFO_LOADING'
+        type: 'FETCH_COUNTRY_DATA_SUCCESS',
+        payload: data
     }
 };
 
-const fullInfoLoaded = (fullInfo) => {
+const countryDataLoadedError = (error) => {
     return {
-        type: 'FETCH_FULL_INFO_SUCCESS',
-        payload: fullInfo
-    }
-};
-
-const fullInfoLoadedError = (error) => {
-    return {
-        type: 'FETCH_FULL_INFO_FAILURE',
+        type: 'FETCH_COUNTRY_DATA_ERROR',
         payload: error
     }
 };
 
-const setFullInfoLoading = () => {
-    return {
-        type: 'SET_FULL_INFO_LOADING'
-    }
-};
-
 export {
-    changeTemperatureBadge,
     changeSelectedCategory,
     popularInfoLoaded,
     popularInfoLoadedError,
     shortInfoLoaded,
-    fullInfoLoaded,
     shortInfoLoadedError,
-    fullInfoLoadedError,
-    setShortInfoLoading,
-    setFullInfoLoading
+    countryDataLoaded,
+    countryDataLoadedError
 };

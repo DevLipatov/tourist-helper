@@ -7,7 +7,6 @@ import './sorting-dpopdown.css';
 
 class SortingDropdown extends Component {
 
-
     render() {
         const {categories, changeSelectedCategory} = this.props;
 

@@ -1,24 +1,23 @@
-import React from 'react';
-import {compose} from "redux";
-import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
 import {Carousel} from "react-bootstrap";
+import {Link} from "react-router-dom";
+import React from "react";
 
 import './home-carousel.css';
 
-const HomeCarousel = ({history, popularInfo}) => {
+export const HomeCarousel = ({popularInfo}) => {
 
     const carouselItems = popularInfo.map(
         (el) => {
             return (
                 <Carousel.Item
-                    onClick={() => history.push(`/country/${el.id}`)}
                     key={el.id}>
-                    <img
-                        className="d-block w-100"
-                        src={el.img}
-                        alt="First slide"
-                    />
+                    <Link to={`/country/${el.id}`}>
+                        <img
+                            className="d-block w-100"
+                            src={el.img}
+                            alt="First slide"
+                        />
+                    </Link>
                     <Carousel.Caption>
                         <h3>{el.title}</h3>
                     </Carousel.Caption>
@@ -33,9 +32,3 @@ const HomeCarousel = ({history, popularInfo}) => {
         </Carousel>
     )
 };
-
-const mapStateToProps = ({popularInfo}) => {
-    return {popularInfo}
-};
-
-export default compose(connect(mapStateToProps), withRouter)(HomeCarousel);

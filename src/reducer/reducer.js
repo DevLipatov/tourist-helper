@@ -1,17 +1,14 @@
 const initialState = {
-    //TODO ask where to hold beter
     categories: ["Hot", "Cold", "Mild"],
-    //
-    shortInfoLoading: true,
-    fullInfoLoading: true,
-    temperatureBadge: "-- - --",
     selectedCategory: "Hot",
-    shortInfo: [],
-    fullInfo: [],
-    shortInfoError: null,
-    fullInfoError: null,
+    shortInfoLoading: true,
+    countryDataLoading: true,
     popularInfo: [],
-    popularInfoError: null
+    shortInfo: [],
+    countryData: {},
+    popularInfoError: null,
+    shortInfoError: null,
+    countryDataError: null
 };
 
 const reducer = (state = initialState, action) => {
@@ -21,21 +18,31 @@ const reducer = (state = initialState, action) => {
         case 'FETCH_POPULAR_INFO_ERROR' :
             return {...state, popularInfoError: action.payload};
         case 'FETCH_SHORT_INFO_SUCCESS' :
-            return {...state, shortInfo: action.payload, shortInfoLoading: false};
+            const dictionary = [...state.shortInfo, ...action.payload]
+                .reduce((accum, item) => {
+                    accum[item.id] = item;
+                    return accum;
+                }, {});
+            const shortInfo = Object.keys(dictionary)
+                .sort()
+                .map(id => dictionary[id]);
+            return {
+                ...state,
+                shortInfo,
+                shortInfoLoading: false
+            };
         case 'FETCH_SHORT_INFO_FAILURE' :
             return {...state, shortInfoError: action.payload};
         case 'SET_SHORT_INFO_LOADING' :
             return {...state, shortInfoLoading: true};
+        case 'FETCH_COUNTRY_DATA_SUCCESS' :
+            return {...state, countryData: action.payload, countryDataLoading: false};
+        case 'FETCH_COUNTRY_DATA_ERROR' :
+            return {...state, countryDataError: action.payload};
         case 'TEMPERATURE_BADGE' :
             return {...state, temperatureBadge: action.payload};
         case 'CHANGE_SELECTED_CATEGORY' :
             return {...state, selectedCategory: action.payload};
-        case 'FETCH_FULL_INFO_SUCCESS' :
-            return {...state, fullInfo: action.payload, fullInfoLoading: false};
-        case 'FETCH_FULL_INFO_FAILURE' :
-            return {...state, fullInfoError: action.error, fullInfoLoading: true};
-        case 'SET_FULL_INFO_LOADING' :
-            return {...state, fullInfoLoading: true};
         default:
             return state;
     }

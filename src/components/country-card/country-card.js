@@ -1,17 +1,12 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Card} from "react-bootstrap";
 import {withRouter} from "react-router-dom";
 
 import './country-card.css';
 
-class CountryCard extends Component{
-
-    render() {
-        const {data, history} = this.props;
+const CountryCard = ({data}) => {
         return (
-            <Card
-                className="bg-dark text-white grow"
-                onClick={() => history.push(`/country/${data.id}`)}>
+            <Card className="bg-dark text-white grow">
                 <Card.Img src={data.img} alt="Card image"/>
                 <Card.ImgOverlay>
                     <Card.Title>{data.title}</Card.Title>
@@ -23,7 +18,6 @@ class CountryCard extends Component{
                 </Card.ImgOverlay>
             </Card>
         )
-    }
-}
+};
 
 export default withRouter(CountryCard);

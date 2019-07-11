@@ -1,60 +1,33 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {Breadcrumb, Button, Container} from "react-bootstrap";
-import {withRouter} from "react-router-dom";
+import {Breadcrumb, Button, Card, Container} from "react-bootstrap";
+import React from "react";
+import CountryCityList from "../country-city-list";
 
 import './country-page.css';
-import {compose} from "redux";
-import withDataService from "../hoc/with-data-service";
 
-class CountryPage extends Component {
+export const CountryPage = ({countryData, shortInfo, match, history}) => {
 
-    componentWillMount() {
-
-    }
-
-    //TODO how to update after history push
-    render() {
-        const {match, history, shortInfo} = this.props;
-
-        //TODO delete log
-        console.log(`Country page rendered with short info =`);
-        console.log(shortInfo);
-        const data = shortInfo.filter(
-            (el) => el.id === match.params.id
-        );
-        console.log('DATA= ');
-        console.log(data[0]);
-
-        if (data[0] === undefined) {
-            return <div></div>
-        }
-
-        return (
-            <Container>
-                <Breadcrumb>
-                    <div>
-                        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-                        <Breadcrumb.Item active>{match.params.id}</Breadcrumb.Item>
-                    </div>
-                    <Button variant="outline-info"
-                            onClick={() => history.goBack()}>
-                        Back
-                    </Button>
-                </Breadcrumb>
+    return (
+        <Container>
+            <Breadcrumb>
                 <div>
-                    {data[0].title}
+                    <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+                    <Breadcrumb.Item active>{match.params.id}</Breadcrumb.Item>
                 </div>
-            </Container>
-        )
-    }
-}
-
-const mapStateToProps = ({shortInfo, fullInfo, countryPageInfo}) => {
-    return {shortInfo, fullInfo, countryPageInfo}
+                <Button variant="outline-info"
+                        onClick={() => history.goBack()}>
+                    Back
+                </Button>
+            </Breadcrumb>
+            <Card>
+                <Card.Img variant="top" src={shortInfo.img}/>
+                <Card.Body>
+                    <h3>{shortInfo.title}</h3>
+                    Some country description from a base on three or four lines. Contains middle temperature
+                    like a {countryData.temperature}, climate, some historical facts
+                    <h4>Popular countries</h4>
+                    <CountryCityList data={countryData.cities}/>
+                </Card.Body>
+            </Card>
+        </Container>
+    )
 };
-
-export default compose(
-    withRouter,
-    withDataService(),
-    connect(mapStateToProps))(CountryPage);
