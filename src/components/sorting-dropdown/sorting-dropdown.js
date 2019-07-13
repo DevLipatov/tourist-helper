@@ -14,9 +14,7 @@ class SortingDropdown extends Component {
             (el) => {
                 return (
                     <Dropdown.Item
-                        onClick={() => {
-                            changeSelectedCategory(el)
-                        }}
+                        onClick={() => changeSelectedCategory(el)}
                         key={el}>
                         {el}
                     </Dropdown.Item>

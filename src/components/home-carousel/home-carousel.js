@@ -9,9 +9,8 @@ export const HomeCarousel = ({popularInfo}) => {
     const carouselItems = popularInfo.map(
         (el) => {
             return (
-                <Carousel.Item
-                    key={el.id}>
-                    <Link to={`/country/${el.id}`}>
+                <Carousel.Item key={el.id}>
+                    <Link to={`/country/${el.title}`}>
                         <img
                             className="d-block w-100"
                             src={el.img}

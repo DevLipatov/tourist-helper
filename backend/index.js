@@ -221,6 +221,7 @@ const transformDataToFullInfoArray = (data) => {
             return (
                 {
                     id: el.id,
+                    title: el.title,
                     temperature: el.temperature,
                     cities: el.cities,
                     category: el.category
@@ -235,22 +236,29 @@ const getPopularCountries = () => {
 };
 
 const getCountriesByCategory = (category) => {
-    return data.filter(
+    const shortInfoArray = transformDataToShortInfoArray(data);
+    return shortInfoArray.filter(
         (el) => el.category === category
     )
 };
 
-const getFullInfoByCountryId = (countryId) => {
-    const fullInfoArray = transformDataToFullInfoArray(data);
-    return fullInfoArray.find(
-        (el) => el.id === countryId
+const getShortInfoByCountryName = (countryName) => {
+    const shortInfoArray = transformDataToShortInfoArray(data);
+    return shortInfoArray.find(
+        (el)=> el.title===countryName
     )
 };
 
-const getShortInfoByCountryId = (countryId) => {
-    const shortInfoArray = transformDataToShortInfoArray(data);
-    return shortInfoArray.find(
-        (el)=> el.id===countryId
+const getFullInfoByCountryName = (countryName) => {
+    const fullInfoArray = transformDataToFullInfoArray(data);
+    return fullInfoArray.find(
+        (el) => el.title === countryName
+    )
+};
+
+const getCountryByCountryName = (countryName) => {
+    return data.find(
+        (el)=> el.title === countryName
     )
 };
 
@@ -263,18 +271,26 @@ app.get('/countries/:category', (request, response) => {
 });
 
 /**
- * Return json object including full country information
+ * Return array of json objects including one element with short information
  */
-app.get('/country/:country_id', (request, response) => {
-    const resp = getFullInfoByCountryId(request.params.country_id);
+app.get('/country/short/:country_name', (request, response) => {
+    const resp = getShortInfoByCountryName(request.params.country_name);
     response.json(resp)
 });
 
 /**
- * Return array of json objects including one element with short info
+ * Return json object including second part of country information
  */
-app.get('/country/short/:country_id', (request, response) => {
-    const resp = getShortInfoByCountryId(request.params.country_id);
+app.get('/country/full/:country_name', (request, response) => {
+    const resp = getFullInfoByCountryName(request.params.country_name);
+    response.json(resp)
+});
+
+/**
+ * Return json object including all country information
+ */
+app.get('/country/:country_name', (request, response) => {
+    const resp = getCountryByCountryName(request.params.country_name);
     response.json(resp)
 });
 

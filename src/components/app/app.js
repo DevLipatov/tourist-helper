@@ -10,7 +10,7 @@ export const App = () => {
             <Header/>
             <Switch>
                 <Route path="/" exact component={HomePage}/>
-                <Route path="/country/:id" render={({match}) => <CountryPage countryId={match.id}/>}/>
+                <Route path="/country/:name" render={({match}) => <CountryPage countryId={match.name}/>}/>
             </Switch>
         </div>
     )

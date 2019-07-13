@@ -26,15 +26,9 @@ const reducer = (state = initialState, action) => {
             const shortInfo = Object.keys(dictionary)
                 .sort()
                 .map(id => dictionary[id]);
-            return {
-                ...state,
-                shortInfo,
-                shortInfoLoading: false
-            };
+            return {...state, shortInfo, shortInfoLoading: false};
         case 'FETCH_SHORT_INFO_FAILURE' :
             return {...state, shortInfoError: action.payload};
-        case 'SET_SHORT_INFO_LOADING' :
-            return {...state, shortInfoLoading: true};
         case 'FETCH_COUNTRY_DATA_SUCCESS' :
             return {...state, countryData: action.payload, countryDataLoading: false};
         case 'FETCH_COUNTRY_DATA_ERROR' :

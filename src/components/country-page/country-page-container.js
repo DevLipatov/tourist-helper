@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {compose} from "redux";
 import {connect} from 'react-redux';
 import {withRouter} from "react-router-dom";
-import {countryDataLoaded, countryDataLoadedError, shortInfoLoaded, shortInfoLoadedError} from "../../actions";
+import {countryDataLoaded, countryDataLoadedError} from "../../actions";
 import withDataService from "../hoc/with-data-service";
 import CustomSpinner from "../custom-spinner";
 import ErrorIndicator from "../error-indicator";
@@ -12,43 +12,42 @@ class CountryPageContainer extends Component {
 
     constructor(props) {
         super(props);
-        const shortInfoInGlobalState = props.shortInfo.find((el) => el.id === props.match.params.id);
-        if (shortInfoInGlobalState) {
-            this.state = {singleShortInfo: shortInfoInGlobalState}
-        } else {
-            this.state = {singleShortInfo: null}
-        }
+
+        const shortInfoInGlobalState = props.shortInfo.find(
+            (el) => el.title === props.match.params.name
+        );
+
+        shortInfoInGlobalState ?
+            this.state = {havePageShortInfo: shortInfoInGlobalState} :
+            this.state = {havePageShortInfo: null}
+
     }
 
     componentWillMount() {
-        const {match, dataService, countryDataLoaded, countryDataLoadedError, shortInfoLoadedError} = this.props;
+        const {match, dataService, countryDataLoaded, countryDataLoadedError} = this.props;
 
-        if (this.state.singleShortInfo === null) {
-            dataService.getShortInfoById(match.params.id)
-                .then((info) => {
-                    this.setState({singleShortInfo: info})
-                })
-                .catch((err) => shortInfoLoadedError(err));
-        }
-        dataService.getCountryById(match.params.id)
+        const countryName = match.params.name;
+
+        const infoLoader = () => this.state.havePageShortInfo ?
+            dataService.getFullInfoByName(countryName) :
+            dataService.getCountryByName(countryName);
+
+        infoLoader()
             .then((info) => countryDataLoaded(info))
             .catch((err) => countryDataLoadedError(err));
     }
 
     render() {
-        const {match, history, countryDataLoading, countryDataError, countryData} = this.props;
-
-        const shortInfo = this.state.singleShortInfo;
+        const {match, history, countryData, countryDataLoading, countryDataError} = this.props;
 
         if (countryDataLoading) return <CustomSpinner/>;
 
         if (countryDataError) return <ErrorIndicator/>;
 
+        const pageData = {...this.state.havePageShortInfo, ...countryData};
+
         return (
-            <CountryPage countryData={countryData}
-                         shortInfo={shortInfo}
-                         match={match}
-                         history={history}/>
+            <CountryPage countryData={pageData} match={match} history={history}/>
         )
     }
 }
@@ -57,7 +56,7 @@ const mapStateToProps = ({shortInfo, countryData, countryDataLoading, countryDat
     return {shortInfo, countryData, countryDataLoading, countryDataError}
 };
 
-const mapDispatchToProps = {countryDataLoaded, countryDataLoadedError, shortInfoLoaded, shortInfoLoadedError};
+const mapDispatchToProps = {countryDataLoaded, countryDataLoadedError};
 
 export default compose(withRouter, withDataService(), connect(mapStateToProps, mapDispatchToProps)
 )(CountryPageContainer);
