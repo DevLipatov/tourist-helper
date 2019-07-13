@@ -1,31 +1,29 @@
-import {Breadcrumb, Button, Card, Container} from "react-bootstrap";
+import {Button, Card, Container, Navbar} from "react-bootstrap";
 import React from "react";
-import CityItems from "../city-items";
+import CityCardList from "../city-card-list";
 
 import './country-page.css';
+import {Link} from "react-router-dom";
 
-export const CountryPage = ({countryData, match, history}) => {
+export const CountryPage = ({countryData}) => {
 
     return (
         <Container>
-            <Breadcrumb>
-                <div>
-                    <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-                    <Breadcrumb.Item active>{match.params.name}</Breadcrumb.Item>
-                </div>
-                <Button variant="outline-info"
-                        onClick={() => history.goBack()}>
-                    Back
-                </Button>
-            </Breadcrumb>
+            <Navbar bg="light" expand="lg">
+                <Navbar.Brand>{countryData.title}</Navbar.Brand>
+                <Link to={'/'}>
+                    <Button variant="outline-info">
+                        Back
+                    </Button>
+                </Link>
+            </Navbar>
             <Card>
                 <Card.Img variant="top" src={countryData.img}/>
                 <Card.Body>
-                    <h3>{countryData.title}</h3>
-                    Some country description from a base on three or four lines. Contains middle temperature
-                    like a {countryData.temperature}, climate, some historical facts
+                    {countryData.description} <br/>
+                    temperature - {countryData.temperature}
                     <h4>Popular countries</h4>
-                    <CityItems data={countryData.cities}/>
+                    <CityCardList data={countryData.cities} countyId={countryData.id}/>
                 </Card.Body>
             </Card>
         </Container>

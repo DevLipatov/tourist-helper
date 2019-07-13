@@ -17,19 +17,11 @@ export default class DataService {
         return await this.getResource(`/countries/${category}`);
     };
 
-    getShortInfoByName = async (countryName) => {
-        return await this.getResource(`/country/short/${countryName}`);
-    };
-
-    getFullInfoByName = async (countryName) => {
-        return await this.getResource(`/country/full/${countryName}`);
-    };
-
-    getCountryByName = async (countryName) => {
-        return await this.getResource(`/country/${countryName}`);
+    getCountryById = async (countryId) => {
+        return await this.getResource(`/${countryId}`);
     };
 
     getPopular = async () => {
-        return await this.getResource(`/popular`);
+        return await this.getResource(`/popular/all`);
     };
 }

@@ -1,4 +1,4 @@
-import {Carousel} from "react-bootstrap";
+import {Carousel, Image} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import React from "react";
 
@@ -10,11 +10,10 @@ export const HomeCarousel = ({popularInfo}) => {
         (el) => {
             return (
                 <Carousel.Item key={el.id}>
-                    <Link to={`/country/${el.title}`}>
-                        <img
+                    <Link to={`/${el.id}`}>
+                        <Image
                             className="d-block w-100"
                             src={el.img}
-                            alt="First slide"
                         />
                     </Link>
                     <Carousel.Caption>
@@ -25,9 +24,5 @@ export const HomeCarousel = ({popularInfo}) => {
         }
     );
 
-    return (
-        <Carousel>
-            {carouselItems}
-        </Carousel>
-    )
+    return <Carousel>{carouselItems}</Carousel>
 };

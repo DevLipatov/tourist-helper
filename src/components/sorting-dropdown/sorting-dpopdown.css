@@ -1,13 +1,13 @@
-.sorting-dropdown {
+.dropleft {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 0 0.5rem 0 0.5rem;
     align-items: center
 }
 
 .dropdown-menu {
-    width: 100%;
+    text-align: center;
     background: burlywood;
 }

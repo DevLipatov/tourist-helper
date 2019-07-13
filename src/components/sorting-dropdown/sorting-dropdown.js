@@ -1,44 +1,38 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
-import {Badge, Dropdown, DropdownButton} from "react-bootstrap";
+import {Dropdown, DropdownButton} from "react-bootstrap";
 import {changeSelectedCategory} from "../../actions";
 
 import './sorting-dpopdown.css';
 
-class SortingDropdown extends Component {
+const SortingDropdown = ({categories, changeSelectedCategory}) => {
 
-    render() {
-        const {categories, changeSelectedCategory} = this.props;
+    const dropdownItems = categories.map(
+        (el) => {
+            return (
+                <Dropdown.Item
+                    onClick={() => changeSelectedCategory(el)}
+                    key={el}>
+                    {el}
+                </Dropdown.Item>
+            )
+        }
+    );
 
-        const dropdownItems = categories.map(
-            (el) => {
-                return (
-                    <Dropdown.Item
-                        onClick={() => changeSelectedCategory(el)}
-                        key={el}>
-                        {el}
-                    </Dropdown.Item>
-                )
-            }
-        );
+    return (
+        <DropdownButton
+            id="dropdown-basic-button"
+            title="Select country climate"
+            drop="left">
+            {dropdownItems}
+        </DropdownButton>
+    )
 
-        return (
-            <div className="sorting-dropdown">
-                <div><h3>
-                    <Badge variant="secondary">Temp: +25 - +30 </Badge>
-                </h3></div>
-                <DropdownButton id="dropdown-basic-button"
-                                title="Select country climate"
-                                drop="left">
-                    {dropdownItems}
-                </DropdownButton>
-            </div>
-        )
-    }
-}
 
-const mapStateToProps = ({categories, selectedCategory}) => {
-    return {categories, selectedCategory}
+};
+
+const mapStateToProps = ({categories}) => {
+    return {categories}
 };
 
 const mapDispatchToProps = {changeSelectedCategory};

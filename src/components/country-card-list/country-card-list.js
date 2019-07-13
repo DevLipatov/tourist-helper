@@ -9,7 +9,7 @@ export const CountryCardList = ({data}) => {
     const items = data.map(
         (el) => {
             return (
-                <Link to={`/country/${el.title}`} key={el.id}>
+                <Link to={`/${el.id}`} key={el.id}>
                     <CountryCard data={el}/>
                 </Link>
             )

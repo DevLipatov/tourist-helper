@@ -15,13 +15,10 @@ class CountryCardListContainer extends Component {
     }
 
     componentDidUpdate() {
-        const {selectedCategory} = this.props;
-        if (this.state.selectedCategory !== selectedCategory) {
-            this.updateList();
-        }
+        if (this.state.selectedCategory !== this.props.selectedCategory)  this.updateList();
     }
 
-    componentWillMount() {this.updateList();}
+    componentWillMount() {this.updateList()}
 
     updateList() {
         const {dataService, selectedCategory, shortInfoLoaded, shortInfoLoadedError} = this.props;
@@ -42,11 +39,11 @@ class CountryCardListContainer extends Component {
 
         const sortedInfo = shortInfo.filter((el) => el.category === selectedCategory);
 
-        return <CountryCardList data={sortedInfo} className="countries"/>
+        return <CountryCardList data={sortedInfo}/>
     }
 }
 
-const mapStateToProps = ({shortInfo, selectedCategory, shortInfoLoading, shortInfoError,}) => {
+const mapStateToProps = ({shortInfo, selectedCategory, shortInfoLoading, shortInfoError}) => {
     return {shortInfo, selectedCategory, shortInfoLoading, shortInfoError}
 };
 

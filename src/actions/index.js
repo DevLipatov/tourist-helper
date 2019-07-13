@@ -5,17 +5,17 @@ const popularInfoLoaded = (popularInfo) => {
     }
 };
 
+const popularInfoLoadedError = (error) => {
+    return {
+        type: 'FETCH_POPULAR_INFO_ERROR',
+        payload: error
+    }
+};
+
 const changeSelectedCategory = (category) => {
     return {
         type: 'CHANGE_SELECTED_CATEGORY',
         payload: category
-    }
-};
-
-const popularInfoLoadedError = (error) => {
-    return {
-        type: 'FETCH_POPULAR_INFO_FAILURE',
-        payload: error
     }
 };
 
@@ -28,7 +28,7 @@ const shortInfoLoaded = (shortInfo) => {
 
 const shortInfoLoadedError = (error) => {
     return {
-        type: 'FETCH_SHORT_INFO_FAILURE',
+        type: 'FETCH_SHORT_INFO_ERROR',
         payload: error
     }
 };
@@ -47,6 +47,12 @@ const countryDataLoadedError = (error) => {
     }
 };
 
+const setCountryDataLoading = () => {
+    return {
+        type: 'SET_COUNTRY_DATA_LOADING',
+    }
+};
+
 export {
     changeSelectedCategory,
     popularInfoLoaded,
@@ -54,5 +60,6 @@ export {
     shortInfoLoaded,
     shortInfoLoadedError,
     countryDataLoaded,
-    countryDataLoadedError
+    countryDataLoadedError,
+    setCountryDataLoading
 };

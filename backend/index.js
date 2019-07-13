@@ -35,7 +35,9 @@ const data = [
                     img: [
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Cairo_Montage.png/290px-Cairo_Montage.png"
                     ],
-                    middlePrices: "90"
+                    middlePrices: "90",
+                    description: "Description of the city. Includes showplaces, historical facts and other info",
+                    shortDescription: "Short info about the city for city card on country page"
                 },
                 {
                     id: "2",
@@ -45,9 +47,13 @@ const data = [
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Alexandria_-_Montaza_Palace_-_front_view.JPG/265px-Alexandria_-_Montaza_Palace_-_front_view.JPG",
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Kay%C4%B1tbay_Kalesi.jpg/265px-Kay%C4%B1tbay_Kalesi.jpg"
                     ],
-                    middlePrices: "70"
+                    middlePrices: "70",
+                    description: "Description of the city. Includes showplaces, historical facts and other info",
+                    shortDescription: "Short info about the city for city card on country page"
                 }],
-            visits: "30"
+            visits: "30",
+            description: "Some description of country. Includes language, currency, some historical facts, the most interesting cities for travel",
+            shortDescription: "Short description of the country for country cards on 1-3 lines"
         },
         {
             id: "4",
@@ -62,7 +68,9 @@ const data = [
                     img: [
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Attardc.jpg/220px-Attardc.jpg"
                     ],
-                    middlePrices: "60"
+                    middlePrices: "60",
+                    description: "Description of the city. Includes showplaces, historical facts and other info",
+                    shortDescription: "Short info about the city for city card on country page"
                 },
                 {
                     id: "4",
@@ -71,10 +79,14 @@ const data = [
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Birzebbuga_Church.JPG/240px-Birzebbuga_Church.JPG",
                         "https://web.archive.org/web/20110106224417im_/http://www.maltavista.ru/img/photo/images2/cs_01.jpg"
                     ],
-                    middlePrices: "75"
+                    middlePrices: "75",
+                    description: "Description of the city. Includes showplaces, historical facts and other info",
+                    shortDescription: "Short info about the city for city card on country page"
                 }
             ],
-            visits: "21"
+            visits: "21",
+            description: "Some description of country. Includes language, currency, some historical facts, the most interesting cities for travel",
+            shortDescription: "Short description of the country for country cards on 1-3 lines"
         },
         {
             id: "2",
@@ -91,7 +103,9 @@ const data = [
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/City_of_Acre%2C_Israel_%28aerial_view%2C_2005%29.jpg/250px-City_of_Acre%2C_Israel_%28aerial_view%2C_2005%29.jpg",
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Amatsuliman01.JPG/250px-Amatsuliman01.JPG"
                     ],
-                    middlePrices: "90"
+                    middlePrices: "90",
+                    description: "Description of the city. Includes showplaces, historical facts and other info",
+                    shortDescription: "Short info about the city for city card on country page"
                 },
                 {
                     id: "6",
@@ -100,10 +114,14 @@ const data = [
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Honor_jewish_soldjer_WW2.jpg/220px-Honor_jewish_soldjer_WW2.jpg",
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Ashqelon_Railway.jpg/240px-Ashqelon_Railway.jpg"
                     ],
-                    middlePrices: "100"
+                    middlePrices: "100",
+                    description: "Description of the city. Includes showplaces, historical facts and other info",
+                    shortDescription: "Short info about the city for city card on country page"
                 }
             ],
-            visits: "50"
+            visits: "50",
+            description: "Some description of country. Includes language, currency, some historical facts, the most interesting cities for travel",
+            shortDescription: "Short description of the country for country cards on 1-3 lines"
         },
         {
             id: "5",
@@ -120,7 +138,9 @@ const data = [
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Map_Vienna_1547.jpg/240px-Map_Vienna_1547.jpg",
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Anonym_Entsatz_Wien_1683.jpg/240px-Anonym_Entsatz_Wien_1683.jpg"
                     ],
-                    middlePrices: "45"
+                    middlePrices: "45",
+                    description: "Description of the city. Includes showplaces, historical facts and other info",
+                    shortDescription: "Short info about the city for city card on country page"
                 },
                 {
                     id: "8",
@@ -130,9 +150,13 @@ const data = [
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Kunsthaus-Graz-Nacht-Medienfassade.jpg/220px-Kunsthaus-Graz-Nacht-Medienfassade.jpg",
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Murinsel_nah.jpg/220px-Murinsel_nah.jpg"
                     ],
-                    middlePrices: "80"
+                    middlePrices: "80",
+                    description: "Description of the city. Includes showplaces, historical facts and other info",
+                    shortDescription: "Short info about the city for city card on country page"
                 }],
-            visits: "69"
+            visits: "69",
+            description: "Some description of country. Includes language, currency, some historical facts, the most interesting cities for travel",
+            shortDescription: "Short description of the country for country cards on 1-3 lines"
         },
         {
             id: "3",
@@ -147,7 +171,9 @@ const data = [
                     img: [
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Erdenet_02.jpg/300px-Erdenet_02.jpg"
                     ],
-                    middlePrices: "60"
+                    middlePrices: "60",
+                    description: "Description of the city. Includes showplaces, historical facts and other info",
+                    shortDescription: "Short info about the city for city card on country page"
                 },
                 {
                     id: "10",
@@ -156,9 +182,13 @@ const data = [
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Kerulen.jpg/300px-Kerulen.jpg",
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Mongolia_location_map.svg/290px-Mongolia_location_map.svg.png"
                     ],
-                    middlePrices: "87"
+                    middlePrices: "87",
+                    description: "Description of the city. Includes showplaces, historical facts and other info",
+                    shortDescription: "Short info about the city for city card on country page"
                 }],
-            visits: "15"
+            visits: "15",
+            description: "Some description of country. Includes language, currency, some historical facts, the most interesting cities for travel",
+            shortDescription: "Short description of the country for country cards on 1-3 lines"
         },
         {
             id: "6",
@@ -174,7 +204,9 @@ const data = [
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tartu_university_christmas.jpg/220px-Tartu_university_christmas.jpg",
                         "https://upload.wikimedia.org/wikipedia/ru/thumb/c/cd/%D0%A2%D0%B0%D1%80%D1%82%D1%83_%D1%83%D0%BB%D0%B8%D1%86%D0%B0.jpg/220px-%D0%A2%D0%B0%D1%80%D1%82%D1%83_%D1%83%D0%BB%D0%B8%D1%86%D0%B0.jpg"
                     ],
-                    middlePrices: "58"
+                    middlePrices: "58",
+                    description: "Description of the city. Includes showplaces, historical facts and other info",
+                    shortDescription: "Short info about the city for city card on country page"
                 },
                 {
                     id: "12",
@@ -183,9 +215,13 @@ const data = [
                         "https://upload.wikimedia.org/wikipedia/commons/5/5f/Sauga_river.jpg",
                         "https://upload.wikimedia.org/wikipedia/commons/0/04/Parnu_1989.jpg"
                     ],
-                    middlePrices: "35"
+                    middlePrices: "35",
+                    description: "Description of the city. Includes showplaces, historical facts and other info",
+                    shortDescription: "Short info about the city for city card on country page"
                 }],
-            visits: "25"
+            visits: "25",
+            description: "Some description of country. Includes language, currency, some historical facts, the most interesting cities for travel",
+            shortDescription: "Short description of the country for country cards on 1-3 lines"
         }
     ]
 ;
@@ -203,28 +239,8 @@ const transformDataToShortInfoArray = (data) => {
                     id: el.id,
                     title: el.title,
                     img: el.img,
-                    category: el.category
-                }
-            )
-        }
-    )
-};
-
-/**
- *  Transform full data array to full_info array for country page request
- * @param data  array ob objects
- * @returns {*} new array of full_info objects
- */
-const transformDataToFullInfoArray = (data) => {
-    return data.map(
-        (el) => {
-            return (
-                {
-                    id: el.id,
-                    title: el.title,
-                    temperature: el.temperature,
-                    cities: el.cities,
-                    category: el.category
+                    category: el.category,
+                    shortDescription: el.shortDescription
                 }
             )
         }
@@ -232,33 +248,20 @@ const transformDataToFullInfoArray = (data) => {
 };
 
 const getPopularCountries = () => {
-    return data.sort((a, b) => b.visits - a.visits).slice(0, 3);
+    const popularData =  data.sort((a, b) => b.visits - a.visits).slice(0, 3);
+    return transformDataToShortInfoArray(popularData);
 };
 
-const getCountriesByCategory = (category) => {
+const getCountriesShortInfoByCategory = (category) => {
     const shortInfoArray = transformDataToShortInfoArray(data);
     return shortInfoArray.filter(
         (el) => el.category === category
     )
 };
 
-const getShortInfoByCountryName = (countryName) => {
-    const shortInfoArray = transformDataToShortInfoArray(data);
-    return shortInfoArray.find(
-        (el)=> el.title===countryName
-    )
-};
-
-const getFullInfoByCountryName = (countryName) => {
-    const fullInfoArray = transformDataToFullInfoArray(data);
-    return fullInfoArray.find(
-        (el) => el.title === countryName
-    )
-};
-
-const getCountryByCountryName = (countryName) => {
+const getCountryById = (countryId) => {
     return data.find(
-        (el)=> el.title === countryName
+        (el)=> el.id === countryId
     )
 };
 
@@ -266,38 +269,22 @@ const getCountryByCountryName = (countryName) => {
  * Return array of objects with countries
  */
 app.get('/countries/:category', (request, response) => {
-    const resp = getCountriesByCategory(request.params.category);
+    const resp = getCountriesShortInfoByCategory(request.params.category);
     response.json(resp);
-});
-
-/**
- * Return array of json objects including one element with short information
- */
-app.get('/country/short/:country_name', (request, response) => {
-    const resp = getShortInfoByCountryName(request.params.country_name);
-    response.json(resp)
-});
-
-/**
- * Return json object including second part of country information
- */
-app.get('/country/full/:country_name', (request, response) => {
-    const resp = getFullInfoByCountryName(request.params.country_name);
-    response.json(resp)
 });
 
 /**
  * Return json object including all country information
  */
-app.get('/country/:country_name', (request, response) => {
-    const resp = getCountryByCountryName(request.params.country_name);
+app.get('/:country_id', (request, response) => {
+    const resp = getCountryById(request.params.country_id);
     response.json(resp)
 });
 
 /**
  *  Return array of popular country objects
  */
-app.get('/popular', (request, response) => {
+app.get('/popular/:id', (request, response) => {
     const resp = getPopularCountries();
     response.json(resp)
 });

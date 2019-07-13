@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {compose} from "redux";
 import {connect} from 'react-redux';
 import {withRouter} from "react-router-dom";
-import {countryDataLoaded, countryDataLoadedError} from "../../actions";
+import {countryDataLoaded, countryDataLoadedError, setCountryDataLoading} from "../../actions";
 import withDataService from "../hoc/with-data-service";
 import CustomSpinner from "../custom-spinner";
 import ErrorIndicator from "../error-indicator";
@@ -10,31 +10,20 @@ import {CountryPage} from "./country-page";
 
 class CountryPageContainer extends Component {
 
-    constructor(props) {
-        super(props);
-
-        const shortInfoInGlobalState = props.shortInfo.find(
-            (el) => el.title === props.match.params.name
-        );
-
-        shortInfoInGlobalState ?
-            this.state = {havePageShortInfo: shortInfoInGlobalState} :
-            this.state = {havePageShortInfo: null}
-
-    }
-
     componentWillMount() {
-        const {match, dataService, countryDataLoaded, countryDataLoadedError} = this.props;
+        const {
+            match, countryData, dataService, countryDataLoaded,
+            countryDataLoadedError, setCountryDataLoading
+        } = this.props;
 
-        const countryName = match.params.name;
+        const haveCountryData = countryData.id === match.params.id;
 
-        const infoLoader = () => this.state.havePageShortInfo ?
-            dataService.getFullInfoByName(countryName) :
-            dataService.getCountryByName(countryName);
-
-        infoLoader()
-            .then((info) => countryDataLoaded(info))
-            .catch((err) => countryDataLoadedError(err));
+        if (!haveCountryData) {
+            setCountryDataLoading();
+            dataService.getCountryById(match.params.id)
+                .then((data) => countryDataLoaded(data))
+                .catch((err) => countryDataLoadedError(err))
+        }
     }
 
     render() {
@@ -44,19 +33,15 @@ class CountryPageContainer extends Component {
 
         if (countryDataError) return <ErrorIndicator/>;
 
-        const pageData = {...this.state.havePageShortInfo, ...countryData};
-
-        return (
-            <CountryPage countryData={pageData} match={match} history={history}/>
-        )
+        return <CountryPage countryData={countryData} match={match} history={history}/>
     }
 }
 
-const mapStateToProps = ({shortInfo, countryData, countryDataLoading, countryDataError}) => {
-    return {shortInfo, countryData, countryDataLoading, countryDataError}
+const mapStateToProps = ({countryData, countryDataLoading, countryDataError}) => {
+    return {countryData, countryDataLoading, countryDataError}
 };
 
-const mapDispatchToProps = {countryDataLoaded, countryDataLoadedError};
+const mapDispatchToProps = {countryDataLoaded, countryDataLoadedError, setCountryDataLoading};
 
 export default compose(withRouter, withDataService(), connect(mapStateToProps, mapDispatchToProps)
 )(CountryPageContainer);
