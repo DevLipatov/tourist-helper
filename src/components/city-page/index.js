@@ -1,3 +1,3 @@
-import CityPage from './city-page';
+import CityPage from './city-page-container';
 
 export default CityPage;

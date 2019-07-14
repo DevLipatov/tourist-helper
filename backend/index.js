@@ -265,8 +265,13 @@ const getCountryById = (countryId) => {
     )
 };
 
+const getCityByCountyIdAndCityId = (countryId, cityId) => {
+    const country = data.find(el=> el.id === countryId);
+    return country.cities.find(el => el.id === cityId);
+};
+
 /**
- * Return array of objects with countries
+ * Return array of json objects with countries by category
  */
 app.get('/countries/:category', (request, response) => {
     const resp = getCountriesShortInfoByCategory(request.params.category);
@@ -274,7 +279,7 @@ app.get('/countries/:category', (request, response) => {
 });
 
 /**
- * Return json object including all country information
+ * Return json object with full single country information by country id
  */
 app.get('/:country_id', (request, response) => {
     const resp = getCountryById(request.params.country_id);
@@ -282,10 +287,19 @@ app.get('/:country_id', (request, response) => {
 });
 
 /**
- *  Return array of popular country objects
+ *  Return array of json objects with popular countries
  */
 app.get('/popular/:id', (request, response) => {
     const resp = getPopularCountries();
+    response.json(resp)
+});
+
+/**
+ * Return json object with single city information by country id and city id
+ */
+app.get('/:country_id/:city_id', (request, response) => {
+    const {country_id, city_id} = request.params;
+    const resp = getCityByCountyIdAndCityId(country_id, city_id);
     response.json(resp)
 });
 

@@ -1,8 +1,7 @@
 import React from 'react';
-import {Image, Media} from "react-bootstrap";
-
-import './city-card-list.css';
 import {Link} from "react-router-dom";
+import {Image, Media} from "react-bootstrap";
+import './city-card-list.css';
 
 const CityCardList = ({data, countyId}) => {
 

@@ -29,11 +29,11 @@ class CountryPageContainer extends Component {
     render() {
         const {match, history, countryData, countryDataLoading, countryDataError} = this.props;
 
-        if (countryDataLoading) return <CustomSpinner/>;
-
         if (countryDataError) return <ErrorIndicator/>;
 
-        return <CountryPage countryData={countryData} match={match} history={history}/>
+        return countryDataLoading ?
+            <CustomSpinner/> :
+            <CountryPage countryData={countryData} match={match} history={history}/>
     }
 }
 

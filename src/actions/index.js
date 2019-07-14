@@ -53,6 +53,20 @@ const setCountryDataLoading = () => {
     }
 };
 
+const cityDataLoaded = (data) => {
+    return {
+        type: 'FETCH_CITY_DATA_SUCCESS',
+        payload: data
+    }
+};
+
+const cityDataLoadedError = (error) => {
+    return {
+        type: 'FETCH_CITY_DATA_ERROR',
+        payload: error
+    }
+};
+
 export {
     changeSelectedCategory,
     popularInfoLoaded,
@@ -61,5 +75,7 @@ export {
     shortInfoLoadedError,
     countryDataLoaded,
     countryDataLoadedError,
-    setCountryDataLoading
+    setCountryDataLoading,
+    cityDataLoaded,
+    cityDataLoadedError
 };

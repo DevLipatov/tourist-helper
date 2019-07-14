@@ -1,9 +1,9 @@
-import {Button, Card, Container, Navbar} from "react-bootstrap";
 import React from "react";
+import {Link} from "react-router-dom";
+import {Button, Card, Container, Navbar} from "react-bootstrap";
 import CityCardList from "../city-card-list";
 
 import './country-page.css';
-import {Link} from "react-router-dom";
 
 export const CountryPage = ({countryData}) => {
 

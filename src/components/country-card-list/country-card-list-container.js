@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import {compose} from "redux";
 import {connect} from 'react-redux';
 import withDataService from "../hoc/with-data-service";
+import {shortInfoLoaded, shortInfoLoadedError} from "../../actions";
 import CustomSpinner from "../custom-spinner";
 import ErrorIndicator from "../error-indicator";
-import {shortInfoLoaded, shortInfoLoadedError} from "../../actions";
-import {CountryCardList} from "./country-card-list";
+import CountryCardList from "./country-card-list";
 
 class CountryCardListContainer extends Component {
 

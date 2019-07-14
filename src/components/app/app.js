@@ -1,8 +1,8 @@
-import Header from "../header";
+import React from "react";
 import {Route, Switch} from "react-router";
+import Header from "../header";
 import HomePage from "../home-page";
 import CountryPage from "../country-page";
-import React from "react";
 import CityPage from "../city-page";
 
 const App = () => {
@@ -11,12 +11,8 @@ const App = () => {
             <Header/>
             <Switch>
                 <Route path="/" exact component={HomePage}/>
-                <Route path="/:id" exact render={({match}) => <CountryPage countryId={match.id}/>}/>
-                <Route path="/:id/:city" render={({match}) =>
-                    <CityPage
-                        countryId={match.country}
-                        cityId={match.city}/>
-                }/>
+                <Route path="/:id" exact component={CountryPage}/>
+                <Route path="/:country/:city" component={CityPage} />
             </Switch>
         </div>
     )

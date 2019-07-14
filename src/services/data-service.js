@@ -21,6 +21,10 @@ export default class DataService {
         return await this.getResource(`/${countryId}`);
     };
 
+    getCityByCountyIdAndCityId = async (countryId, cityId) => {
+        return await this.getResource(`/${countryId}/${cityId}`)
+    };
+
     getPopular = async () => {
         return await this.getResource(`/popular/all`);
     };

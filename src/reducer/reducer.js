@@ -4,12 +4,15 @@ const initialState = {
     popularInfoLoading: true,
     shortInfoLoading: true,
     countryDataLoading: true,
+    cityDataLoading: true,
     popularInfo: [],
     shortInfo: [],
     countryData: {},
+    cityData: null,
     popularInfoError: null,
     shortInfoError: null,
-    countryDataError: null
+    countryDataError: null,
+    cityDataError: null
 };
 
 const reducer = (state = initialState, action) => {
@@ -40,6 +43,10 @@ const reducer = (state = initialState, action) => {
             return {...state, countryDataError: action.payload};
         case 'CHANGE_SELECTED_CATEGORY' :
             return {...state, selectedCategory: action.payload};
+        case 'FETCH_CITY_DATA_SUCCESS' :
+            return {...state, cityData: action.payload, cityDataLoading: false};
+        case 'FETCH_CITY_DATA_ERROR' :
+            return {...state, cityDataError: action.payload};
         default:
             return state;
     }

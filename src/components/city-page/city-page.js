@@ -1,28 +1,31 @@
-import React from 'react';
-import {withRouter} from "react-router";
+import React from "react";
 import {Link} from "react-router-dom";
-import {Button, Modal} from 'react-bootstrap';
+import ErrorIndicator from "../error-indicator";
+import CustomSpinner from "../custom-spinner";
+import {Button, Card, Container, Navbar} from "react-bootstrap";
 
-import './city-page.css';
+const CityPage = ({match, data, loading, error}) => {
 
-const CityPage = ({match}) => {
-
-    return (
-        <div>
-            <Modal.Dialog>
-                <Modal.Header>
-                    <Modal.Title>Modal title</Modal.Title>
-                    <Link to={`/${match.params.id}`}>
-                        <Button variant="secondary">Close</Button>
+    return error ?
+        <ErrorIndicator/> :
+        loading ?
+            <CustomSpinner/> :
+            <Container>
+                <Navbar bg="light" expand="lg">
+                    <Navbar.Brand> {data.title}</Navbar.Brand>
+                    <Link to={`/${match.params.country}`}>
+                        <Button variant="outline-info">
+                            Back
+                        </Button>
                     </Link>
-                </Modal.Header>
-
-                <Modal.Body>
-                    <p>Modal body text goes here.</p>
-                </Modal.Body>
-            </Modal.Dialog>
-        </div>
-    )
+                </Navbar>
+                <Card>
+                    <Card.Img variant="top" src={data.img[0]}/>
+                    <Card.Body>
+                        {data.description}
+                    </Card.Body>
+                </Card>
+            </Container>
 };
 
-export default withRouter(CityPage);
+export default CityPage;

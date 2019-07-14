@@ -4,7 +4,7 @@ import CountryCard from "../country-card";
 
 import './country-card-list.css';
 
-export const CountryCardList = ({data}) => {
+const CountryCardList = ({data}) => {
 
     const items = data.map(
         (el) => {
@@ -18,3 +18,5 @@ export const CountryCardList = ({data}) => {
 
     return <>{items}</>
 };
+
+export default CountryCardList;
