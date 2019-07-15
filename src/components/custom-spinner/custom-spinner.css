@@ -1,0 +1,6 @@
+.custom-spinner {
+    height: 13rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
