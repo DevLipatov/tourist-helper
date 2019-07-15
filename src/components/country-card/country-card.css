@@ -3,3 +3,7 @@
     -ms-transform: scale(1.01);
     transform: scale(1.01);
 }
+
+.country-card {
+    margin-top: 0.5rem;
+}

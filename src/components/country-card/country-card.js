@@ -5,7 +5,7 @@ import './country-card.css';
 
 const CountryCard = ({data}) => {
         return (
-            <Card className="bg-dark text-white grow">
+            <Card className="bg-dark text-white grow country-card">
                 <Card.Img src={data.img}/>
                 <Card.ImgOverlay>
                     <Card.Title>{data.title}</Card.Title>

@@ -1,16 +1,7 @@
-.city-gallery-container {
-    max-height: 5rem;
-    display: flex;
-    overflow: scroll;
-    flex-direction: row;
-}
-
-.city-gallery-container .img-fluid {
-    margin: 0 0.5rem 0 0.5rem;
-    height: 100%;
-    width: auto;
-}
-
 .media {
     margin-bottom: 2rem;
+}
+
+.city-card {
+    margin: 1rem 0 0rem 0;
 }

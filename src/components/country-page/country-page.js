@@ -15,7 +15,7 @@ const CountryPage = ({countryData}) => {
                 <Card.Body>
                     {countryData.description} <br/>
                     temperature - {countryData.temperature}
-                    <h4>Popular countries</h4>
+                    <h4 className="popular-countries-h4">Popular countries</h4>
                     <CityCardList data={countryData.cities} countyId={countryData.id}/>
                 </Card.Body>
             </Card>
