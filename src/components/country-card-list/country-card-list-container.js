@@ -24,10 +24,11 @@ class CountryCardListContainer extends Component {
         const {dataService, selectedCategory, shortInfoLoaded, shortInfoLoadedError} = this.props;
         dataService.getCountriesByCategory(selectedCategory)
             .then((info) => {
-                this.setState({selectedCategory: selectedCategory});
+
                 shortInfoLoaded(info)
             })
             .catch((err) => shortInfoLoadedError(err));
+        this.setState({selectedCategory: selectedCategory});
     };
 
     render() {
