@@ -15,7 +15,7 @@ class CountryCardListContainer extends Component {
     }
 
     componentDidUpdate() {
-        if (this.state.selectedCategory !== this.props.selectedCategory)  this.updateList();
+        if (this.state.selectedCategory !== this.props.selectedCategory) this.updateList();
     }
 
     componentWillMount() {this.updateList()}
@@ -23,10 +23,7 @@ class CountryCardListContainer extends Component {
     updateList() {
         const {dataService, selectedCategory, shortInfoLoaded, shortInfoLoadedError} = this.props;
         dataService.getCountriesByCategory(selectedCategory)
-            .then((info) => {
-
-                shortInfoLoaded(info)
-            })
+            .then((info) => shortInfoLoaded(info))
             .catch((err) => shortInfoLoadedError(err));
         this.setState({selectedCategory: selectedCategory});
     };
@@ -34,13 +31,9 @@ class CountryCardListContainer extends Component {
     render() {
         const {shortInfo, shortInfoLoading, shortInfoError, selectedCategory} = this.props;
 
-        if (shortInfoLoading) return <CustomSpinner/>;
-
-        if (shortInfoError) return <ErrorIndicator/>;
-
-        const sortedInfo = shortInfo.filter((el) => el.category === selectedCategory);
-
-        return <CountryCardList data={sortedInfo}/>
+        return shortInfoError ? <ErrorIndicator/> :
+            shortInfoLoading ? <CustomSpinner/> :
+                <CountryCardList data={shortInfo.filter((el) => el.category === selectedCategory)}/>
     }
 }
 
