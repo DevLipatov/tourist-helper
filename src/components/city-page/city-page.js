@@ -1,8 +1,8 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import ErrorIndicator from "../error-indicator";
 import CustomSpinner from "../custom-spinner";
-import {Button, Card, Container, Navbar} from "react-bootstrap";
+import {Card, Container} from "react-bootstrap";
+import PageNavbar from "../page-navbar";
 
 const CityPage = ({match, data, loading, error}) => {
 
@@ -11,14 +11,7 @@ const CityPage = ({match, data, loading, error}) => {
         loading ?
             <CustomSpinner/> :
             <Container>
-                <Navbar bg="light" expand="lg">
-                    <Navbar.Brand> {data.title}</Navbar.Brand>
-                    <Link to={`/${match.params.country}`}>
-                        <Button variant="outline-info">
-                            Back
-                        </Button>
-                    </Link>
-                </Navbar>
+                <PageNavbar title={data.title} backLink={`/${match.params.country}`}/>
                 <Card>
                     <Card.Img variant="top" src={data.img[0]}/>
                     <Card.Body>

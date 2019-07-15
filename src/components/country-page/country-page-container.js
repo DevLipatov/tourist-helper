@@ -6,7 +6,7 @@ import {countryDataLoaded, countryDataLoadedError, setCountryDataLoading} from "
 import withDataService from "../hoc/with-data-service";
 import CustomSpinner from "../custom-spinner";
 import ErrorIndicator from "../error-indicator";
-import {CountryPage} from "./country-page";
+import CountryPage from "./country-page";
 
 class CountryPageContainer extends Component {
 

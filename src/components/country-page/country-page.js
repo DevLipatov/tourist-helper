@@ -1,22 +1,15 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import {Button, Card, Container, Navbar} from "react-bootstrap";
+import {Card, Container} from "react-bootstrap";
 import CityCardList from "../city-card-list";
+import PageNavbar from "../page-navbar";
 
 import './country-page.css';
 
-export const CountryPage = ({countryData}) => {
+const CountryPage = ({countryData}) => {
 
     return (
         <Container>
-            <Navbar bg="light" expand="lg">
-                <Navbar.Brand>{countryData.title}</Navbar.Brand>
-                <Link to={'/'}>
-                    <Button variant="outline-info">
-                        Back
-                    </Button>
-                </Link>
-            </Navbar>
+            <PageNavbar title={countryData.title} backLink={'/'}/>
             <Card>
                 <Card.Img variant="top" src={countryData.img}/>
                 <Card.Body>
@@ -29,3 +22,5 @@ export const CountryPage = ({countryData}) => {
         </Container>
     )
 };
+
+export default CountryPage;
