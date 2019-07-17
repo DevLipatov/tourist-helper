@@ -5,9 +5,9 @@ import withDataService from "../hoc/with-data-service";
 import {shortInfoLoaded, shortInfoLoadedError} from "../../actions";
 import CustomSpinner from "../custom-spinner";
 import ErrorIndicator from "../error-indicator";
-import CountryCardList from "./country-card-list";
+import CountryList from "./country-list";
 
-class CountryCardListContainer extends Component {
+class CountryListContainer extends Component {
 
     constructor(props) {
         super(props);
@@ -33,7 +33,7 @@ class CountryCardListContainer extends Component {
 
         return shortInfoError ? <ErrorIndicator/> :
             shortInfoLoading ? <CustomSpinner/> :
-                <CountryCardList data={shortInfo.filter((el) => el.category === selectedCategory)}/>
+                <CountryList data={shortInfo.filter((el) => el.category === selectedCategory)}/>
     }
 }
 
@@ -44,4 +44,4 @@ const mapStateToProps = ({shortInfo, selectedCategory, shortInfoLoading, shortIn
 const mapDispatchToProps = {shortInfoLoaded, shortInfoLoadedError};
 
 export default compose(withDataService(), connect(mapStateToProps, mapDispatchToProps)
-)(CountryCardListContainer);
+)(CountryListContainer);

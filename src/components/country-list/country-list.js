@@ -2,9 +2,9 @@ import React from "react";
 import {Link} from "react-router-dom";
 import CountryCard from "../country-card";
 
-import './country-card-list.css';
+import './country-list.css';
 
-const CountryCardList = ({data}) => {
+const CountryList = ({data}) => {
 
     const items = data.map(
         (el) => {
@@ -19,4 +19,4 @@ const CountryCardList = ({data}) => {
     return <>{items}</>
 };
 
-export default CountryCardList;
+export default CountryList;

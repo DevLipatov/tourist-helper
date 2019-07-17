@@ -2,7 +2,7 @@ import React from 'react';
 import {Container} from "react-bootstrap";
 import HomeCarousel from "../home-carousel";
 import SortingDropdown from "../sorting-dropdown";
-import CountryCardList from '../country-card-list';
+import CountryList from '../country-list';
 
 import './home-page.css';
 
@@ -12,7 +12,7 @@ const HomePage = () => {
         <Container>
             <HomeCarousel/>
             <SortingDropdown/>
-            <CountryCardList/>
+            <CountryList/>
         </Container>
     )
 };

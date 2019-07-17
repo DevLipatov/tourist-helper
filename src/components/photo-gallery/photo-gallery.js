@@ -5,7 +5,7 @@ import './photo-gallery.css';
 
 const PhotoGallery = ({data})=> {
 
-    const items = data.map((el) => <Image src={el} key={el.slice(-10)} fluid/>);
+    const items = data.map((el) => <Image src={el.img} key={el.id} fluid/>);
 
     return <div className="city-gallery-container">{items}</div>
 

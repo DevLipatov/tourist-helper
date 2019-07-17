@@ -12,13 +12,13 @@ const CityPage = ({match, data, loading, error}) => {
         loading ?
             <CustomSpinner/> :
             <Container>
-                <PageNavbar title={data.title} backLink={`/${match.params.country}`}/>
+                <PageNavbar title={data.title} backLink={`/${match.params.country}`} label={"Back to the country"}/>
                 <Card>
-                    <Card.Img variant="top" src={data.img[0]}/>
+                    <Card.Img variant="top" src={data.images[0].img}/>
                     <Card.Body>
                         {data.description}
                     </Card.Body>
-                    <PhotoGallery data={data.img}/>
+                    <PhotoGallery data={data.images}/>
                 </Card>
             </Container>
 };
