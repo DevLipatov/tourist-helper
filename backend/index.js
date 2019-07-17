@@ -34,7 +34,7 @@ const data = [
                     title: "Каир",
                     images: [
                         {
-                            id: 1,
+                            id: "1",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Cairo_Montage.png/290px-Cairo_Montage.png"
                         }
                     ],
@@ -47,15 +47,15 @@ const data = [
                     title: "Александрия",
                     images: [
                         {
-                            id: 2,
+                            id: "2",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Abu_el-Abbas_el-Mursi_Mosque_in_Alexandria.jpg/265px-Abu_el-Abbas_el-Mursi_Mosque_in_Alexandria.jpg"
                         },
                         {
-                            id: 3,
+                            id: "3",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Alexandria_-_Montaza_Palace_-_front_view.JPG/265px-Alexandria_-_Montaza_Palace_-_front_view.JPG"
                         },
                         {
-                            id: 4,
+                            id: "4",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Kay%C4%B1tbay_Kalesi.jpg/265px-Kay%C4%B1tbay_Kalesi.jpg"
                         }
                     ],
@@ -79,7 +79,7 @@ const data = [
                     title: "Аттард",
                     images: [
                         {
-                            id: 5,
+                            id: "5",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Attardc.jpg/220px-Attardc.jpg"
                         }
                     ],
@@ -92,11 +92,11 @@ const data = [
                     title: "Бирзеббуджа",
                     images: [
                         {
-                            id: 6,
+                            id: "6",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Birzebbuga_Church.JPG/240px-Birzebbuga_Church.JPG"
                         },
                         {
-                            id: 7,
+                            id: "7",
                             img: "https://web.archive.org/web/20110106224417im_/http://www.maltavista.ru/img/photo/images2/cs_01.jpg"
                         }
                     ],
@@ -121,15 +121,15 @@ const data = [
                     title: "Акко",
                     images: [
                         {
-                            id: 8,
+                            id: "8",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Aerial_view_of_Acre_1.jpg/267px-Aerial_view_of_Acre_1.jpg"
                         },
                         {
-                            id: 9,
+                            id: "9",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/City_of_Acre%2C_Israel_%28aerial_view%2C_2005%29.jpg/250px-City_of_Acre%2C_Israel_%28aerial_view%2C_2005%29.jpg"
                         },
                         {
-                            id: 10,
+                            id: "10",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Amatsuliman01.JPG/250px-Amatsuliman01.JPG"
                         }
                     ],
@@ -142,11 +142,11 @@ const data = [
                     title: "Ашкелон",
                     images: [
                         {
-                            id: 11,
+                            id: "11",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Honor_jewish_soldjer_WW2.jpg/220px-Honor_jewish_soldjer_WW2.jpg"
                         },
                         {
-                            id: 12,
+                            id: "12",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Ashqelon_Railway.jpg/240px-Ashqelon_Railway.jpg"
                         }
                     ],
@@ -171,15 +171,15 @@ const data = [
                     title: "Вена",
                     images: [
                         {
-                            id: 13,
+                            id: "13",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Collage_von_Wien.jpg/290px-Collage_von_Wien.jpg"
                         },
                         {
-                            id: 14,
+                            id: "14",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Map_Vienna_1547.jpg/240px-Map_Vienna_1547.jpg"
                         },
                         {
-                            id: 15,
+                            id: "15",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Anonym_Entsatz_Wien_1683.jpg/240px-Anonym_Entsatz_Wien_1683.jpg"
                         }
                     ],
@@ -192,15 +192,15 @@ const data = [
                     title: "Грац",
                     images: [
                         {
-                            id: 16,
+                            id: "16",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GrazerRathaus-edit.jpg/290px-GrazerRathaus-edit.jpg"
                         },
                         {
-                            id: 17,
+                            id: "17",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Kunsthaus-Graz-Nacht-Medienfassade.jpg/220px-Kunsthaus-Graz-Nacht-Medienfassade.jpg"
                         },
                         {
-                            id: 18,
+                            id: "18",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Murinsel_nah.jpg/220px-Murinsel_nah.jpg"
                         }
                     ],
@@ -224,7 +224,7 @@ const data = [
                     title: "Эрдэнэт",
                     images: [
                         {
-                            id: 19,
+                            id: "19",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Erdenet_02.jpg/300px-Erdenet_02.jpg"
                         }
                     ],
@@ -237,11 +237,11 @@ const data = [
                     title: "Чойбалсан",
                     images: [
                         {
-                            id: 20,
+                            id: "20",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Kerulen.jpg/300px-Kerulen.jpg"
                         },
                         {
-                            id: 21,
+                            id: "21",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Mongolia_location_map.svg/290px-Mongolia_location_map.svg.png"
                         }
                     ],
@@ -265,11 +265,11 @@ const data = [
                     title: "Тарту",
                     images: [
                         {
-                            id: 22,
+                            id: "22",
                             img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tartu_university_christmas.jpg/220px-Tartu_university_christmas.jpg"
                         },
                         {
-                            id: 23,
+                            id: "23",
                             img: "https://upload.wikimedia.org/wikipedia/ru/thumb/c/cd/%D0%A2%D0%B0%D1%80%D1%82%D1%83_%D1%83%D0%BB%D0%B8%D1%86%D0%B0.jpg/220px-%D0%A2%D0%B0%D1%80%D1%82%D1%83_%D1%83%D0%BB%D0%B8%D1%86%D0%B0.jpg"
                         }
                     ],
@@ -282,11 +282,11 @@ const data = [
                     title: "Пярну",
                     images: [
                         {
-                            id: 24,
+                            id: "24",
                             img: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Sauga_river.jpg"
                         },
                         {
-                            id: 25,
+                            id: "25",
                             img: "https://upload.wikimedia.org/wikipedia/commons/0/04/Parnu_1989.jpg"
                         }
                     ],
@@ -297,6 +297,74 @@ const data = [
             visits: "25",
             description: "Some description of country. Includes language, currency, some historical facts, the most interesting cities for travel",
             shortDescription: "Short description of the country for country cards on 1-3 lines"
+        },
+        {
+            id: "9",
+            title: "Албания",
+            img: "https://g1.nh.ee/images/pix/3e60e59631320bf37f-78825790.jpg",
+            temperature: "-20 - +25",
+            category: "Mild",
+            cities: [
+                {
+                    id: "13",
+                    title: "Берат",
+                    images: [
+                        {
+                            id: "26",
+                            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Berat_Unesco_2016_Albania.jpg/280px-Berat_Unesco_2016_Albania.jpg"
+                        },
+                        {
+                            id: "27",
+                            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Old_town_of_berat_1.jpg/200px-Old_town_of_berat_1.jpg"
+                        }
+                    ],
+                    middlePrices: "58",
+                    description: "Description of the city. Includes showplaces, historical facts and other info",
+                    shortDescription: "Short info about the city for city card on country page"
+                },
+                {
+                    id: "14",
+                    title: "Буррели",
+                    images: [
+                        {
+                            id: "28",
+                            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Burrel%2C_Albania_2017-04_Main_Square_02.jpg/200px-Burrel%2C_Albania_2017-04_Main_Square_02.jpg"
+                        },
+                        {
+                            id: "29",
+                            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Burrel_Square.jpg/290px-Burrel_Square.jpg"
+                        }
+                    ],
+                    middlePrices: "25",
+                    description: "Description of the city. Includes showplaces, historical facts and other info",
+                    shortDescription: "Short info about the city for city card on country page"
+                },
+                {
+                    id: "15",
+                    title: "Гирокастра",
+                    images: [
+                        {
+                            id: "30",
+                            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Gjirokastra_2016_Alb.jpg/1280px-Gjirokastra_2016_Alb.jpg"
+                        },
+                        {
+                            id: "31",
+                            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gjirokastra.jpg/290px-Gjirokastra.jpg"
+                        },
+                        {
+                            id: "32",
+                            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/House_in_gjirokastra.jpg/250px-House_in_gjirokastra.jpg"
+                        }
+                    ],
+                    middlePrices: "25",
+                    description: "Description of the city. Includes showplaces, historical facts and other info",
+                    shortDescription: "Short info about the city for city card on country page"
+                }
+            ],
+            visits: "40",
+            description: "Some description of country. Includes language, currency, some historical facts, the most interesting cities for travel",
+            shortDescription: "Short description of the country for country cards on 1-3 lines"
+
         }
     ]
 ;

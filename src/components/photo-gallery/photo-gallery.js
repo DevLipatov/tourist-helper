@@ -1,13 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Image} from "react-bootstrap";
 
 import './photo-gallery.css';
+import ImageModal from "../image-modal";
 
-const PhotoGallery = ({data})=> {
+const PhotoGallery = ({data}) => {
 
-    const items = data.map((el) => <Image src={el.img} key={el.id} fluid/>);
+    const [show, setShow] = useState(false);
+    const [src, setSrc] = useState(null);
 
-    return <div className="city-gallery-container">{items}</div>
+    const items = data.map((el) =>
+        <Image src={el.img}
+               key={el.id}
+               fluid
+               onClick={() => {
+                   setSrc(el.img);
+                   setShow(true)
+               }}/>);
+
+    return <div className="city-gallery-container">
+        {items}
+        <ImageModal show={show} setShow={setShow} imgSrc={src}/>
+    </div>
 
 };
 
