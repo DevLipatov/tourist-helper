@@ -1,6 +1,6 @@
 .image-gallery-modal .modal-header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .image-gallery-modal .img-fluid {

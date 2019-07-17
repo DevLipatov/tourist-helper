@@ -20,7 +20,7 @@ const CityCard = ({cityData, countryId}) => {
                 </Link>
                 <p>{cityData.shortDescription}</p>
                 Middle prices : {cityData.middlePrices}
-                <PhotoGallery data={cityData.images}/>
+                <PhotoGallery data={cityData.images} modalTitle={cityData.title}/>
             </Media.Body>
         </Media>
     )

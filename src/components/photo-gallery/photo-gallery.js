@@ -4,7 +4,7 @@ import {Image} from "react-bootstrap";
 import './photo-gallery.css';
 import ImageModal from "../image-modal";
 
-const PhotoGallery = ({data}) => {
+const PhotoGallery = ({data, modalTitle}) => {
 
     const [show, setShow] = useState(false);
     const [src, setSrc] = useState(null);
@@ -20,7 +20,7 @@ const PhotoGallery = ({data}) => {
 
     return <div className="city-gallery-container">
         {items}
-        <ImageModal show={show} setShow={setShow} imgSrc={src}/>
+        <ImageModal show={show} setShow={setShow} imgSrc={src} title={modalTitle}/>
     </div>
 
 };

@@ -18,7 +18,7 @@ const CityPage = ({match, data, loading, error}) => {
                     <Card.Body>
                         {data.description}
                     </Card.Body>
-                    <PhotoGallery data={data.images}/>
+                    <PhotoGallery data={data.images} modalTitle={data.title}/>
                 </Card>
             </Container>
 };
